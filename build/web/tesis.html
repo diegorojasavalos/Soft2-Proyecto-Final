@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>iTesis | Tesis</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="js/Dropbox-sdk.min.js" type="text/javascript"></script>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header>
+            <nav class="amber darken-4">
+                <div class="nav-wrapper">
+                    <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+                    <ul class="right">
+                        <li><a class="dropdown-button" id="logout" href="#">Log Out<i class="material-icons right">exit_to_app</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+            <ul id="slide-out" class="side-nav">
+                <li><div class="userView">
+                        <div class="background">
+                            <img src="http://www.ulima.edu.pe/sites/default/files/styles/600x300/public/page/image/ul4091.jpg?itok=KkUbQ3fz">
+                        </div>
+                        <a href="#"><img class="circle" src="https://4.bp.blogspot.com/-NLusaFMqnEY/V4uaoaYCF0I/AAAAAAAACwY/aTzFI9lRdDwlv7dS_Crmklf-3rfOzRG_gCLcB/s320/ULIMA.jpg"></a>
+                        <a href="#"><span class="white-text name">Nombre</span></a>
+                        <a href="#"><span class="white-text codigo">Codigo</span></a>
+                    </div></li>
+                <li><a class="waves-effect" href="index.html"><i class="material-icons">home</i>Principal</a></li>
+                <li><a class="waves-effect" href="datos.html"><i class="material-icons">person</i>Datos Personales</a></li>
+                <li class="active"><a class="waves-effect" href="tesis.html"><i class="material-icons">library_books</i>Tesis</a></li>
+            </ul>
+        </header>
+        <main>
+            <div id="noHay">
+                <h2 class="centro">No tienes tesis, por favor agrega una</h2>
+            </div>
+            <ul class="collection with-header oculto" id="siHay" style="margin: 5%;">
+                <li class="collection-header avatar"><h4>Información de tesis</h4></li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle black">book</i>
+                    <span class="title">Titulo</span>
+                    <p id="title">Titulo</p>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle black">book</i>
+                    <span class="title">Descripción</span>
+                    <p id="desc">Descripción</p>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle orange">accessibility</i>
+                    <span class="title">Asesor</span>
+                    <p id="asesor">Asesor</p>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle blue">link</i>
+                    <span class="link">Link</span>
+                    <a id="link"><p>Ver Tesis</p></a>
+                </li>
+            </ul>
+            <div class="fixed-action-btn">
+                <a class="btn-floating flotante1 btn-large black" id="add" href="#modal1">
+                    <i class="large material-icons">add</i>
+                </a>
+            </div>
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Agregar nueva tesis</h4>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="titulo" type="text" class="validate">
+                            <label for="title">Tema de investigación</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <textarea id="descripcion" class="materialize-textarea"></textarea>
+                            <label for="desc">Descripción</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <select id="asesores">
+                                <option value="" disabled selected>Seleccionar asesor</option>
+                            </select>
+                        </div>
+                        <div class="input-field col s12">
+                            <div class="file-field input-field">
+                                <div class="btn amber darken-4">
+                                    <span>Buscar</span>
+                                    <input id="doc" type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" placeholder="Seleccionar tesis" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat agregar">Agregar</a>
+                    <a href="#" class="modal-action modal-close waves-effect waves-red btn-flat">Cancelar</a>
+                </div>
+            </div>
+        </main>
+        <footer class="page-footer amber darken-4">
+            <div class="container">
+                <div class="col s12 m8 offset-m2 l6 offset-l3">
+                    <div class="row valign-wrapper">
+                        <div class="col s4">
+                            <img class="circle hoverable ancho" src="http://oliva.ulima.edu.pe/imagenes/fotos/168468.jpg">
+                            <h6 class="letra">Diego Rojas</h6>
+                            <h6 class="letra">C.E.O. Alcode</h6>
+                        </div>
+                        <div class="col s4 offset-s4">
+                            <img class="circle hoverable ancho" src="http://oliva.ulima.edu.pe/imagenes/fotos/190391.jpg">
+                            <h6 class="letra">Juan Vilchez</h6>
+                        </div>
+                        <div class="col s4 offset-s4">
+                            <img class="circle hoverable ancho" src="http://oliva.ulima.edu.pe/imagenes/fotos/120471.jpg">
+                            <h6 class="letra">Carlos Munive</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    Alcode S.A.C © 2017 Copyright
+                </div>
+            </div>
+        </footer>
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+        <script src="js/acciones.js" type="text/javascript"></script>
+        <script src="js/tesis.js" type="text/javascript"></script>
+    </body>
+</html>
